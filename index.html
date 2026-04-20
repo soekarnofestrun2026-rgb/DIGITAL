@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGITAL</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #0f172a, #1e3a8a, #2563eb);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 38px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.btn {
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.dropdown div {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown div:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* HERO */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* CARD */
+.card {
+  margin: 30px auto;
+  max-width: 350px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* BUTTON CTA */
+.cta {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cta:hover {
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1 {
+    font-size: 28px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="https://via.placeholder.com/40" alt="Logo D">
+    <span>DIGITAL</span>
+  </div>
+
+  <div class="menu">
+    <button class="btn" onclick="toggleLang()">🌐 ID</button>
+    <button class="btn">🔍</button>
+    <button class="btn">☰</button>
+
+    <div class="dropdown" id="langMenu">
+      <div onclick="setLang('EN')">🇬🇧 EN</div>
+      <div onclick="setLang('ID')">🇮🇩 ID</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Platform Digital Modern</h1>
+  <p>Jual tiket, kelola event, dan bisnis online kamu di sini</p>
+</section>
+
+<div class="card">
+  <h3>🎫 Event Terbaru</h3>
+  <p>Poliponi 2026 - Malang</p>
+  <button class="cta">Beli Tiket</button>
+</div>
+
+<script>
+function toggleLang() {
+  const menu = document.getElementById("langMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function setLang(lang) {
+  alert("Bahasa dipilih: " + lang);
+  document.getElementById("langMenu").style.display = "none";
+}
+</script>
+
+</body>
+</html>
